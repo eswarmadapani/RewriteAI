@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import Rewrite from "./pages/Rewrite";
 import "./App.css";
 
