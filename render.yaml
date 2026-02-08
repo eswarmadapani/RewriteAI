@@ -13,5 +13,3 @@ services:
         sync: false
       - key: ALLOWED_ORIGINS
         value: http://localhost:5173
-      - key: PYTHON_VERSION
-        value: 3.11
