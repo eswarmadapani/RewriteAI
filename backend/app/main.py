@@ -10,11 +10,14 @@ load_dotenv()
 app = FastAPI(title="Email Rewriter", version="1.0.0")
 
 # Get allowed origins from environment variable, default to localhost for development
-allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173")
+allowed_origins = allowed_origins_str.split(",")
 
+# Allow all vercel.app subdomains for deployment flexibility
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app$",
+    allow_origins=allowed_origins,  # Also allow explicit origins from env
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
