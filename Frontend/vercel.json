@@ -1,0 +1,17 @@
+# Vercel Deployment Configuration
+
+This file provides instructions for deploying the frontend to Vercel.
+
+## Build Settings
+
+- **Framework:** Vite
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Install Command:** `npm install`
+
+## Environment Variables
+
+Add in Vercel dashboard:
+
+- **Key:** `VITE_API_BASE_URL`
+- **Value:** Your Render backend URL (e.g., `https://email-rewriter-api.onrender.com/api`)
